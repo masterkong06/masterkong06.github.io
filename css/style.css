@@ -1,8 +1,17 @@
+.container {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
 #lines_container {
     /* background-color: blue; */
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     position: relative;
+    border: 1px solid #666;
+
 }
 
 #dots_container {
@@ -12,15 +21,27 @@
     position: absolute;
     margin: 0 auto;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
 /* https://www.w3schools.com/howto/howto_css_circles.asp */
 .dots {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     background-color: #000;
     border-radius: 50%;
     display: inline-block;
 }
 
+.top_dots_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom_dots_container{
+    display: flex;
+    justify-content: space-between;
+}
