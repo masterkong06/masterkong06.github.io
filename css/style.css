@@ -1,0 +1,26 @@
+#lines_container {
+    /* background-color: blue; */
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+#dots_container {
+    /* background-color: brown; */
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin: 0 auto;
+    z-index: 10;
+
+}
+
+/* https://www.w3schools.com/howto/howto_css_circles.asp */
+.dots {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
