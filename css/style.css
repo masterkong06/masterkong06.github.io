@@ -7,6 +7,7 @@
     width: 70%;
     text-align: center;
     margin: 50px auto;
+    position: relative;
 }
 
 
@@ -14,20 +15,28 @@
     /* background-color: blue; */
     width: 100px;
     height: 100px;
-    position: relative;
-    border: 1px solid rgb(231, 231, 231);
+    position: absolute;
+    border: 6px solid rgb(231, 231, 231);
+    top: 5px;
+    left: 5px;
 
+}
+
+#lines_container:hover {
+    border-top: springgreen;
 }
 
 #dots_container {
     /* background-color: brown; */
-    width: 105px;
-    height: 105px;
+    width: 125px;
+    height: 125px;
     position: absolute;
     z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    top: 0px;
+    left: 0px;
 
 }
 
