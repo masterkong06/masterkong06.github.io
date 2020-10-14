@@ -1,37 +1,54 @@
-//Ask for player names
+//Ask for player names and take the first letter and store it in variable
 
-let playerOne = '';
-// console.log(playerOne);
+let playerOneInitial = '';
+let playerTwoInitial = '';
+let playerOneColor = '';
+let playerTwoColor = '';
 
-let playerTwo = '';
-// console.log(playerOne);
+
+
 
 const getPlayerInitials = () => {
-    playerOne = prompt(`Enter Player One Name`);
-    while (playerOne == '') {
-        alert(`Please enter a name`);
-        playerOne = prompt(`Enter Player One Name`);
+    // playerOneInitial = prompt(`Enter Player One Name`);
+    while (playerOneInitial == '') {
+        alert(`Please enter player one's name`);
+        playerOneInitial = prompt(`Player One Name`);
     }
-    if (playerOne != '' && playerOne.length > 1) {
-        console.log(playerOne.substring(0, 1));
-        // console.log(playerOne);
+    if (playerOneInitial != '' && playerOneInitial.length > 1) {
+        console.log(playerOneInitial.substring(0, 1));
+        // console.log(playerOneInitial);
     }
-    playerTwo = prompt(`Enter Player Two Name`);
-    while (playerTwo == '') {
-        alert(`Please enter a name`);
-        playerTwo = prompt(`Enter Player Two Name`);
+    // playerTwoInitial = prompt(`Enter Player Two Name`);
+    while (playerTwoInitial == '') {
+        alert(`Please enter a player two's name`);
+        playerTwoInitial = prompt(`Player Two Name`);
     }
-    if (playerTwo != '' && playerTwo.length > 1) {
-        console.log(playerTwo.substring(0, 1));
-        // console.log(playerTwo);
+    if (playerTwoInitial != '' && playerTwoInitial.length > 1) {
+        console.log(playerTwoInitial.substring(0, 1));
+        // console.log(playerTwoInitial);
     }
+};
 
-
+const getPlayerColor = () =>{
+    while (playerOneColor == ''){
+        alert(`Player One: Do you want to be red or blue?`);
+        playerOneColor = prompt(`Type "Red" or "Blue" to choose your color`);
+    } if(playerOneColor == ''){
+        playerOneColor = prompt(`Type "Red" or "Blue" to choose your color`);
+    } else if(playerOneColor == 'Red'){
+        playerTwoColor = 'Blue';
+    } else {
+        playerTwoColor = 'Red';
+    }
 };
 
 
 $(() => {
     getPlayerInitials();
+    console.log(playerOneInitial);
+    getPlayerColor();
+    console.log(playerOneColor);
+    console.log(playerTwoColor);
 
     //Repurposed code from programatic DOM example
 
