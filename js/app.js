@@ -3,39 +3,37 @@
 
 $(() => {
 
-// const $canvas = $('#game_canvas'); //select the div with id = "game_canvas"
-// const $context = $canvas.getContext('2d');
+//Repurposed code from programatic DOM example
 
-const $canvas = document.getElementById('game_canvas');
-const $context = $canvas.getContext('2d');
+//build a grid of four boxes
+const buildGrid = () =>{
+    for (let i = 1; i <= 4; i++){
+        makeBox(i);
+
+    }
+
+};
+
+//make a box function
+const makeBox = (num) => {
+    $box = $('<div>').addClass('box');
+    $box.attr('id', num);
+    $('.container').append($box);
+};
 
 
-// top line
-$context.beginPath();
-$context.strokeStyle = 'black';
-$context.moveTo(50,50);
-$context.lineTo(100, 50);
-$context.stroke();
+buildGrid(); //call the code to build the grid
 
-// right line
-$context.beginPath();
-$context.strokeStyle = 'black';
-$context.moveTo(100,50);
-$context.lineTo(100, 100);
-$context.stroke();
+//when you hover 
 
-// bottom line
-$context.beginPath();
-$context.strokeStyle = 'black';
-$context.moveTo(100,100);
-$context.lineTo(50, 100);
-$context.stroke();
+// EventListeners
 
-// left line
-$context.beginPath();
-$context.strokeStyle = 'black';
-$context.moveTo(50,100);
-$context.lineTo(50, 50);
-$context.stroke();
+$('div').click(function(e){
+    if(  e.offsetX < 5){
+         $(this).css('border-left', `5px solid red`);
+     }
+ });
+
+
 
 });

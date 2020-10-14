@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%;
+    text-align: center;
+    margin: 50px auto;
+    position: relative;
+}
+
+
+/* #lines_container {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border: 10px solid rgb(231, 231, 231);
+    top: 5px;
+    left: 5px;
+    z-index: 100;
+
+} */
+
+
+
+#dots_container {
+    /* background-color: brown; */
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0px;
+    left: 0px;
+
+}
+
+/* https://www.w3schools.com/howto/howto_css_circles.asp */
+.dots {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.top_dots_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom_dots_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#lines_container:hover {
+    border-top: 10px solid rgb(0, 63, 134);
+}
+
+/* Border properties */
+
+/* p1_border_top{
+    border-top: 10px solid rgb(134, 0, 0);
+}
+
+p1_border_right{
+    border-top: 10px solid rgb(134, 0, 0);
+}
+
+p1_border_bottom{
+    border-top: 10px solid rgb(134, 0, 0);
+}
+
+p1_border_left{
+    border-top: 10px solid rgb(134, 0, 0);
+}
+
+p2_border_top{
+    border-top: 10px solid rgb(0, 125, 134);
+}
+
+p2_border_right{
+    border-top: 10px solid rgb(0, 125, 134);
+}
+
+p2_border_bottom{
+    border-top: 10px solid rgb(0, 125, 134);
+}
+
+p2_border_left{
+    border-top: 10px solid rgb(0, 125, 134);
+} */
+
+
+/* #game_canvas {
+    width: 100%;
+    height: 100%;
+    background-color: coral;
+} */
