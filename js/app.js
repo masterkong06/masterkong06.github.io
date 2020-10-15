@@ -138,11 +138,10 @@ $('#box_br').click(function (event) {
     } else if (event.offsetX > ($('#box_br').innerWidth() - 5)){
         $('#box_br').css('border-right', `10px solid red`);
     } else if (event.offsetY < 5) {
-        $('#box_br').css('border-top', `10px solid red`);
+        $('#box_br').css('border-top', `5px solid red`);
+        $('#box_tr').css('border-bottom', `5px solid red`);
     } else if (event.offsetY > ($('#box_br').innerHeight() - 5) || event.offsetY > ($('#box_br').innerHeight() + 15)) {
         $('#box_br').css('border-bottom', `10px solid red`);
-        $('#box_bl').css('border-top', `0px solid red`);
-        $('#box_br').css('border-top', `0px solid red`);
 
     }
 });  
