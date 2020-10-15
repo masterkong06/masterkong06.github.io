@@ -4,9 +4,7 @@ let playerOneInitial = '';
 let playerTwoInitial = '';
 let playerOneColor = '';
 let playerTwoColor = '';
-
-
-
+let turns = 0;
 
 const getPlayerInitials = () => {
     // playerOneInitial = prompt(`Enter Player One Name`);
@@ -29,26 +27,33 @@ const getPlayerInitials = () => {
     }
 };
 
-const getPlayerColor = () =>{
-    while (playerOneColor == ''){
+// Establish a player's color
+const getPlayerColor = () => {
+    while (playerOneColor == '') {
         alert(`Player One: Do you want to be red or blue?`);
         playerOneColor = prompt(`Type "Red" or "Blue" to choose your color`);
-    } if(playerOneColor == ''){
+    }
+    if (playerOneColor == '') {
         playerOneColor = prompt(`Type "Red" or "Blue" to choose your color`);
-    } else if(playerOneColor == 'Red'){
+    } else if (playerOneColor == 'Red') {
         playerTwoColor = 'Blue';
     } else {
         playerTwoColor = 'Red';
     }
 };
 
+//function to determine whose turn it is
+//how many possible turns are there given the number of squares drawn
+
+const turnTracking = () => {
+
+}
+
+
 
 $(() => {
-    getPlayerInitials();
-    console.log(playerOneInitial);
-    getPlayerColor();
-    console.log(playerOneColor);
-    console.log(playerTwoColor);
+    // getPlayerInitials();
+    // getPlayerColor();
 
     //Repurposed code from programatic DOM example
 
@@ -77,12 +82,30 @@ $(() => {
 
 
     //detects the mouse is near the left of the box
-    $('div').click(function (e) {
-        if (e.offsetX < 5) {
+    $('div').click(function (event) {
+        console.log(this);
+        if (event.offsetX < 5) {
             $(this).css('border-left', `5px solid red`);
+            if ($(this).hasClass('container')) {
+                $(this).css('border', `0px solid white`);
+            }
         }
-    });
+        if (event.offsetX > $(this).innerwidth()) {
+            $(this).css('border-right', `5px solid red`);
+            if ($(this).hasClass('container')) {
+                $(this).css('border', `0px solid white`);
+            }
+        } if (event.offsetY < 5){
+            $(this).css('border-top', `5px solid red`);
+            if ($(this).hasClass('container')) {
+                $(this).css('border', `0px solid white`);
+            }
+            
+        }
 
+       
+    });
+    // another conditional to ignore the container 
 
 
 });
