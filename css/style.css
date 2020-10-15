@@ -10,6 +10,7 @@
     margin: 100px auto;
     display: flex;
     flex-wrap: wrap;
+    background-color: gray;
   }
 
 .box {
@@ -21,6 +22,24 @@
     color: white;
     text-shadow: 1px 1px 1px black;
     border: 5px solid gray;
-
 }
 
+#box_tl {
+    border-top: 10px solid gray;
+    border-left: 10px solid gray;
+}
+
+#box_tr {
+    border-top: 10px solid gray;
+    border-right: 10px solid gray;
+}
+
+#box_bl {
+    border-bottom: 10px solid gray;
+    border-left: 10px solid gray;
+}
+
+#box_br {
+    border-bottom: 10px solid gray;
+    border-right: 10px solid gray;
+}

@@ -47,7 +47,7 @@ const getPlayerColor = () => {
 
 const turnTracking = () => {
 
-}
+};
 
 
 
@@ -58,23 +58,23 @@ $(() => {
     //Repurposed code from programatic DOM example
 
     //build a grid of four boxes
-    const buildGrid = () => {
-        for (let i = 1; i <= 4; i++) {
-            makeBox(i);
+    // const buildGrid = () => {
+    //     for (let i = 1; i <= 4; i++) {
+    //         makeBox(i);
 
-        }
+    //     }
 
-    };
+    // };
 
-    //make a box function
-    const makeBox = (num) => {
-        $box = $('<div>').addClass('box');
-        $box.attr('id', num);
-        $('.container').append($box);
-    };
+    // //make a box function
+    // const makeBox = (num) => {
+    //     $box = $('<div>').addClass('box');
+    //     $box.attr('id', num);
+    //     $('.container').append($box);
+    // };
 
 
-    buildGrid(); //call the code to build the grid
+    // buildGrid(); //call the code to build the grid
 
     //when you hover 
 
@@ -82,30 +82,79 @@ $(() => {
 
 
     //detects the mouse is near the left of the box
-    $('div').click(function (event) {
-        console.log(this);
+    $('#box_tl').click(function (event) {
+        
         if (event.offsetX < 5) {
-            $(this).css('border-left', `5px solid red`);
+            $('#box_tl').css('border-left', `10px solid red`);
             if ($(this).hasClass('container')) {
                 $(this).css('border', `0px solid white`);
             }
+            console.log($(this));
+        } else if (event.offsetX > ($('#box_tl').innerWidth() - 5)){
+            $('#box_tl').css('border-right', `10px solid red`);
+            $('#box_tr').css('border-left', `0px solid red`);
+        } else if(event.offsetY < 5){
+            $('#box_tl').css('border-top', `10px solid red`);
+        } else if(event.offsetY > ($('#box_tl').innerHeight() - 5) || event.offsetY > ($('#box_tl').innerHeight() + 150)) {
+            $('#box_tl').css('border-bottom', `10px solid red`);
+            $('#box_bl').css('border-top', `0px solid red`);
+            $('#box_br').css('border-top', `0px solid red`);
+
         }
-        if (event.offsetX > $(this).innerwidth()) {
-            $(this).css('border-right', `5px solid red`);
-            if ($(this).hasClass('container')) {
-                $(this).css('border', `0px solid white`);
-            }
-        } if (event.offsetY < 5){
-            $(this).css('border-top', `5px solid red`);
-            if ($(this).hasClass('container')) {
-                $(this).css('border', `0px solid white`);
-            }
+        
+        
+        
+        //else if (event.offsetX > ($(this).innerwidth - 5) || event.offsetX < ($('#box_tl').innerwidth + 10)) {
+        //     $('#box_tl').css('border-right', `10px solid red`);
+        // }
+
+    });
+
+    // $('#box_tr').click(function (event) {
+        
+    //     if (event.offsetX < 50) {
+    //         $(this).css('border-right', `10px solid red`);
+    //         if ($(this).hasClass('container')) {
+    //             $(this).css('border', `0px solid white`);
+    //         }
+    //         console.log($(this));
+    //     }
+
+    // })
+
+        
+                
+                // } else if (event.offsetY < 5) {
+                //     $('#box_tr').css('border-top', `10px solid red`);
+                //     if ($(this).hasClass('container')) {
+                //         $(this).css('border', `0px solid white`);
+                //     }
+                // }  
+                
+                // if (event.offsetX > ($('#box_tl').innerwidth()-5) || event.offsetX < ($('#box_tl').innerwidth()+10 )){
+                //     $('#box_tl').css('border-right', `10px solid red`);
+                // }
+
+        // if (event.offsetX > $(this).innerwidth()) {
+        //     $(this).css('border-right', `10px solid red`);
+        //     if ($(this).hasClass('container')) {
+        //         $(this).css('border', `0px solid white`);
+        //     }
+        // } if (event.offsetY < 5){
+        //     $(this).css('border-top', `10px solid red`);
+        //     if ($(this).hasClass('container')) {
+        //         $(this).css('border', `0px solid white`);
+        //     }
             
-        }
+        // }
 
        
-    });
+    
     // another conditional to ignore the container 
+
+
+    //if pla
+
 
 
 });
