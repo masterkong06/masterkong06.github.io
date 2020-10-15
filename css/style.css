@@ -10,7 +10,7 @@
     margin: 100px auto;
     display: flex;
     flex-wrap: wrap;
-    background-color: gray;
+    /* background-color: gray; */
   }
 
 .box {
