@@ -153,18 +153,30 @@ $(() => {
     $('#box_tr').click(function (event) {
 
         if (event.offsetX < 5) { //if I click on the left side of #box_tr
-            $('#box_tr').css('border-left', `10px solid red`); //set left border property
-            $('#box_tl').css('border-right', `0px solid red`); // and right border property of #box_tl
+            $('#box_tr').css('border-left', `10px solid ${playerColor}`); //set left border property
+            $('#box_tl').css('border-right', `0px solid ${playerColor}`); // and right border property of #box_tl
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
             if ($(this).hasClass('container')) {
                 $(this).css('border', `0px solid white`); //set outer container border property to white
             }
         } else if (event.offsetX > ($('#box_tr').innerWidth() - 5)) {
-            $('#box_tr').css('border-right', `10px solid red`);
+            $('#box_tr').css('border-right', `10px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
         } else if (event.offsetY < 5) {
-            $('#box_tr').css('border-top', `10px solid red`);
+            $('#box_tr').css('border-top', `10px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
         } else if (event.offsetY > ($('#box_tr').innerHeight() - 5) || event.offsetY > ($('#box_tr').innerHeight() + 15)) {
-            $('#box_tr').css('border-bottom', `5px solid red`);
-            $('#box_br').css('border-top', `5px solid red`);
+            $('#box_tr').css('border-bottom', `5px solid ${playerColor}`);
+            $('#box_br').css('border-top', `5px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
 
         }
         console.log($(this));
@@ -175,18 +187,30 @@ $(() => {
     $('#box_br').click(function (event) {
 
         if (event.offsetX < 5) { //if I click on the left side of #box_br
-            $('#box_br').css('border-left', `10px solid red`); //set left border property
-            $('#box_bl').css('border-right', `0px solid red`); // and right border property of #box_bl
+            $('#box_br').css('border-left', `10px solid ${playerColor}`); //set left border property
+            $('#box_bl').css('border-right', `0px solid ${playerColor}`); // and right border property of #box_bl
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
             if ($(this).hasClass('container')) {
                 $(this).css('border', `0px solid white`); //set outer container border property to white
             }
         } else if (event.offsetX > ($('#box_br').innerWidth() - 5)) {
-            $('#box_br').css('border-right', `10px solid red`);
+            $('#box_br').css('border-right', `10px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
         } else if (event.offsetY < 5) {
-            $('#box_br').css('border-top', `5px solid red`);
-            $('#box_tr').css('border-bottom', `5px solid red`);
+            $('#box_br').css('border-top', `5px solid ${playerColor}`);
+            $('#box_tr').css('border-bottom', `5px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
         } else if (event.offsetY > ($('#box_br').innerHeight() - 5) || event.offsetY > ($('#box_br').innerHeight() + 15)) {
-            $('#box_br').css('border-bottom', `10px solid red`);
+            $('#box_br').css('border-bottom', `10px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
 
         }
         console.log($(this));
@@ -196,18 +220,30 @@ $(() => {
     $('#box_bl').click(function (event) {
 
         if (event.offsetX < 5) { //if I click on the left side of #box_br
-            $('#box_bl').css('border-left', `10px solid red`); //set left border property
+            $('#box_bl').css('border-left', `10px solid ${playerColor}`); //set left border property
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
             if ($(this).hasClass('container')) {
                 $(this).css('border', `0px solid white`); //set outer container border property to white
             }
         } else if (event.offsetX > ($('#box_bl').innerWidth() - 5)) {
-            $('#box_bl').css('border-right', `10px solid red`);
-            $('#box_br').css('border-left', `0px solid red`);
+            $('#box_bl').css('border-right', `10px solid ${playerColor}`);
+            $('#box_br').css('border-left', `0px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
         } else if (event.offsetY < 5) {
-            $('#box_bl').css('border-top', `5px solid red`);
-            $('#box_tl').css('border-bottom', `5px solid red`);
+            $('#box_bl').css('border-top', `5px solid ${playerColor}`);
+            $('#box_tl').css('border-bottom', `5px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
         } else if (event.offsetY > ($('#box_bl').innerHeight() - 5) || event.offsetY > ($('#box_bl').innerHeight() + 15)) {
-            $('#box_bl').css('border-bottom', `10px solid red`);
+            $('#box_bl').css('border-bottom', `10px solid ${playerColor}`);
+            playerSwitch();
+            console.log(currentPlayer);
+            console.log(playerColor);
 
         }
         console.log($(this));
