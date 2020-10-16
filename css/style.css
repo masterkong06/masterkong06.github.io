@@ -45,6 +45,19 @@
 }
 
 
-/* .red_border{
+.t_border{
+    text-align: center;
+}
 
-} */
+.r_border{
+    text-align: center;
+}
+
+.b_border{
+    text-align: center;
+}
+
+.l_border{
+    text-align: center;
+}
+
