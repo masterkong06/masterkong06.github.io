@@ -14,7 +14,7 @@ const getPlayerOneInitials = () => {
         playerOneInitial = prompt(`Player One Name`);
     }
     if (playerOneInitial != '' && playerOneInitial.length > 1) {
-       let initial = playerOneInitial.substring(0, 1);
+        let initial = playerOneInitial.substring(0, 1);
         // console.log(playerOneInitial);
         return initial;
     }
@@ -31,7 +31,7 @@ const getPlayerTwoInitials = () => {
         // console.log(playerTwoInitial);
         return initial;
     }
-    
+
 };
 
 // Establish a player's color
@@ -59,11 +59,11 @@ const getPlayerTwoInitials = () => {
 //         console.log(playerOneColor);
 //     console.log(playerTwoColor);
 //     }
-    
+
 //     //else if (playerOneColor != 'Blue' || playerOneColor != 'Red') {
 //     //         playerOneColor = prompt(`Type "Red" or "Blue" to choose your color`);
 //     //     }
-    
+
 //     // if (playerOneColor == '') {
 //     //     playerOneColor = prompt(`Type "Red" or "Blue" to choose your color`);
 //     // } else if (playerOneColor == 'Red') {
@@ -89,8 +89,8 @@ const getPlayerTwoInitials = () => {
 // End of game occurs if turnTracking() returns 12 and no player has more than 3 boxes or turnTracking() returns 12 and either player has 3 or more boxes or turnTracking() returns less than 12 and either player has 3 or more boxes
 
 const playerSwitch = () => {
-    if (currentPlayer%2 === 0){
-   currentPlayer++; 
+    if (currentPlayer % 2 === 0) {
+        currentPlayer++;
         playerColor = 'red'; //player 1 css for lines
     } else {
         currentPlayer++;
@@ -110,27 +110,27 @@ const wonABox = () => {
     boxClass.each(boxClass => {
 
         //player 1 wins a box
-        if ($('#box_tl').is('.l_border') && currentPlayer%2 ===0){
+        if ($('#box_tl').is('.l_border') && currentPlayer % 2 === 0) {
             $('#box_tl').html(`<p>${playerOneInitial}</p>`);
-        } else if($('#box_tr').is('.l_border') && currentPlayer%2 ===0){
+        } else if ($('#box_tr').is('.l_border') && currentPlayer % 2 === 0) {
             $('#box_tr').html(`<p>${playerOneInitial}</p>`);
-        } else if($('#box_br').is('.l_border') && currentPlayer%2 ===0){
-        $('#box_tr').html(`<p>${playerOneInitial}</p>`);
-        }else if($('#box_bl').is('.l_border') && currentPlayer%2 ===0){
+        } else if ($('#box_br').is('.l_border') && currentPlayer % 2 === 0) {
+            $('#box_tr').html(`<p>${playerOneInitial}</p>`);
+        } else if ($('#box_bl').is('.l_border') && currentPlayer % 2 === 0) {
             $('#box_bl').html(`<p>${playerOneInitial}</p>`);
-        currentPlayer--;
+            currentPlayer--;
         }
 
         // player 2 wins a box
-        else if ($('#box_tl').is('.l_border') && currentPlayer%2 !==0){
+        else if ($('#box_tl').is('.l_border') && currentPlayer % 2 !== 0) {
             $('#box_tl').html(`<p>${playerTwoInitial}</p>`);
-        } else if($('#box_tr').is('.l_border') && currentPlayer%2 !==0){
+        } else if ($('#box_tr').is('.l_border') && currentPlayer % 2 !== 0) {
             $('#box_tr').html(`<p>${playerTwoInitial}</p>`);
-        } else if($('#box_br').is('.l_border') && currentPlayer%2 !==0){
-        $('#box_tr').html(`<p>${playerTwoInitial}</p>`);
-        }else if($('#box_bl').is('.l_border') && currentPlayer%2 !==0){
+        } else if ($('#box_br').is('.l_border') && currentPlayer % 2 !== 0) {
+            $('#box_tr').html(`<p>${playerTwoInitial}</p>`);
+        } else if ($('#box_bl').is('.l_border') && currentPlayer % 2 !== 0) {
             $('#box_bl').html(`<p>${playerTwoInitial}</p>`);
-        currentPlayer--;
+            currentPlayer--;
         }
 
         // game is a tie
@@ -149,14 +149,20 @@ const wonABox = () => {
         // }
 
 
-        
+
     });
-    
-   
+
+
 };
 
+let $reset = ('#reset');
+$reset.click(function () {
+    ('#box_tl').removeClass('l_border');
+    ('#box_tr').removeClass('l_border');
+    ('#box_br').removeClass('l_border');
+    ('#box_bl').removeClass('l_border');
 
-
+}
 
 
 
@@ -166,17 +172,17 @@ $(() => {
 
 
     $('h1').html(`Cornered: A Lines and Dots Game`);
-    console.log(playerOneInitial,playerTwoInitial);
+    console.log(playerOneInitial, playerTwoInitial);
     // getPlayerColor();
     // turnTracking();
     // console.log(playerOneColor, playerTwoColor);
 
-    
+
 
     // add elements to the DOM
 
-    
-    
+
+
 
 
     // EventListeners
@@ -344,55 +350,6 @@ $(() => {
     });
 
 
-    //
-
-
-
-
-    // $('#box_tr').click(function (event) {
-
-    //     if (event.offsetX < 50) {
-    //         $(this).css('border-right', `10px solid red`);
-    //         if ($(this).hasClass('container')) {
-    //             $(this).css('border', `0px solid white`);
-    //         }
-    //         console.log($(this));
-    //     }
-
-    // })
-
-
-
-    // } else if (event.offsetY < 5) {
-    //     $('#box_tr').css('border-top', `10px solid red`);
-    //     if ($(this).hasClass('container')) {
-    //         $(this).css('border', `0px solid white`);
-    //     }
-    // }  
-
-    // if (event.offsetX > ($('#box_tl').innerwidth()-5) || event.offsetX < ($('#box_tl').innerwidth()+10 )){
-    //     $('#box_tl').css('border-right', `10px solid red`);
-    // }
-
-    // if (event.offsetX > $(this).innerwidth()) {
-    //     $(this).css('border-right', `10px solid red`);
-    //     if ($(this).hasClass('container')) {
-    //         $(this).css('border', `0px solid white`);
-    //     }
-    // } if (event.offsetY < 5){
-    //     $(this).css('border-top', `10px solid red`);
-    //     if ($(this).hasClass('container')) {
-    //         $(this).css('border', `0px solid white`);
-    //     }
-
-    // }
-
-
-
-    // another conditional to ignore the container 
-
-
-    //if pla
 
 
 
