@@ -155,14 +155,8 @@ const wonABox = () => {
 
 };
 
-let $reset = ('#reset');
-$reset.click(function () {
-    ('#box_tl').removeClass('l_border');
-    ('#box_tr').removeClass('l_border');
-    ('#box_br').removeClass('l_border');
-    ('#box_bl').removeClass('l_border');
 
-}
+
 
 
 
@@ -349,7 +343,14 @@ $(() => {
         console.log(currentPlayer);
     });
 
-
+$('.reset').click(function (e) { 
+    e.preventDefault();
+    $('#box_tl').removeClass('l_border');
+    $('#box_tr').removeClass('l_border');
+    $('#box_bl').removeClass('l_border');
+    $('#box_br').removeClass('l_border');
+    location.reload();
+});
 
 
 

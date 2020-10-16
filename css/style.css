@@ -19,9 +19,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(216, 17, 166);
     text-shadow: 1px 1px 1px black;
     border: 5px solid gray;
+    font-size: 5rem;
 }
 
 #box_tl {
@@ -79,6 +80,8 @@ h1{
     display: inline-block;
     cursor: pointer;
     text-align: center;
+    margin: 20px;
+    height: 200px;
  }
  
  .reset:hover {
