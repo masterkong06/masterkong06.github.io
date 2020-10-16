@@ -110,25 +110,25 @@ const wonABox = () => {
     boxClass.each(boxClass => {
 
         //player 1 wins a box
-        if ($('#box_tl').is('.l_border') && currentPlayer % 2 === 0) {
+        if ($('#box_tl').hasClass('l_border') && $('#box_tl').hasClass('t_border') && $('#box_tl').hasClass('r_border') && $('#box_tl').hasClass('b_border') && currentPlayer % 2 === 0) {
             $('#box_tl').html(`<p>${playerOneInitial}</p>`);
-        } else if ($('#box_tr').is('.l_border') && currentPlayer % 2 === 0) {
+        } else if ($('#box_tl').hasClass('l_border') && $('#box_tl').hasClass('t_border') && $('#box_tl').hasClass('r_border') && $('#box_tl').hasClass('b_border') && currentPlayer % 2 === 0) {
             $('#box_tr').html(`<p>${playerOneInitial}</p>`);
-        } else if ($('#box_br').is('.l_border') && currentPlayer % 2 === 0) {
+        } else if ($('#box_tl').hasClass('l_border') && $('#box_tl').hasClass('t_border') && $('#box_tl').hasClass('r_border') && $('#box_tl').hasClass('b_border') && currentPlayer % 2 === 0) {
             $('#box_tr').html(`<p>${playerOneInitial}</p>`);
-        } else if ($('#box_bl').is('.l_border') && currentPlayer % 2 === 0) {
+        } else if ($('#box_tl').hasClass('l_border') && $('#box_tl').hasClass('t_border') && $('#box_tl').hasClass('r_border') && $('#box_tl').hasClass('b_border') && currentPlayer % 2 === 0) {
             $('#box_bl').html(`<p>${playerOneInitial}</p>`);
             currentPlayer--;
         }
 
         // player 2 wins a box
-        else if ($('#box_tl').is('.l_border') && currentPlayer % 2 !== 0) {
+        else if ($('#box_tl').hasClass('l_border') && $('#box_tl').hasClass('t_border') && $('#box_tl').hasClass('r_border') && $('#box_tl').hasClass('b_border') && currentPlayer % 2 !== 0) {
             $('#box_tl').html(`<p>${playerTwoInitial}</p>`);
-        } else if ($('#box_tr').is('.l_border') && currentPlayer % 2 !== 0) {
+        } else if ($('#box_tl').hasClass('l_border') && $('#box_tl').hasClass('t_border') && $('#box_tl').hasClass('r_border') && $('#box_tl').hasClass('b_border') && currentPlayer % 2 !== 0) {
             $('#box_tr').html(`<p>${playerTwoInitial}</p>`);
-        } else if ($('#box_br').is('.l_border') && currentPlayer % 2 !== 0) {
+        } else if ($('#box_tl').hasClass('l_border') && $('#box_tl').hasClass('t_border') && $('#box_tl').hasClass('r_border') && $('#box_tl').hasClass('b_border') && currentPlayer % 2 !== 0) {
             $('#box_tr').html(`<p>${playerTwoInitial}</p>`);
-        } else if ($('#box_bl').is('.l_border') && currentPlayer % 2 !== 0) {
+        } else if ($('#box_tl').hasClass('l_border') && $('#box_tl').hasClass('t_border') && $('#box_tl').hasClass('r_border') && $('#box_tl').hasClass('b_border') && currentPlayer % 2 !== 0) {
             $('#box_bl').html(`<p>${playerTwoInitial}</p>`);
             currentPlayer--;
         }
@@ -201,20 +201,20 @@ $(() => {
         } else if (event.offsetX > ($('#box_tl').innerWidth() - 5)) {
             $('#box_tl').css('border-right', `10px solid ${playerColor}`);
             $('#box_tr').css('border-left', `0px solid ${playerColor}`);
-            $('#box_tl').addClass('l_border');
+            $('#box_tl').addClass('r_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
         } else if (event.offsetY < 5) {
             $('#box_tl').css('border-top', `10px solid ${playerColor}`);
-            $('#box_tl').addClass('l_border');
+            $('#box_tl').addClass('t_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
         } else if (event.offsetY > ($('#box_tl').innerHeight() - 5) || event.offsetY > ($('#box_tl').innerHeight() + 5)) {
             $('#box_tl').css('border-bottom', `5px solid ${playerColor}`);
             $('#box_bl').css('border-top', `5px solid ${playerColor}`);
-            $('#box_tl').addClass('l_border');
+            $('#box_tl').addClass('b_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
@@ -224,6 +224,7 @@ $(() => {
         wonABox();
         console.log(currentPlayer);
     });
+    
 
     //top right box
     $('#box_tr').click(function (event) {
@@ -240,20 +241,20 @@ $(() => {
             }
         } else if (event.offsetX > ($('#box_tr').innerWidth() - 5)) {
             $('#box_tr').css('border-right', `10px solid ${playerColor}`);
-            $('#box_tr').addClass('l_border');
+            $('#box_tr').addClass('r_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
         } else if (event.offsetY < 5) {
             $('#box_tr').css('border-top', `10px solid ${playerColor}`);
-            $('#box_tr').addClass('l_border');
+            $('#box_tr').addClass('t_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
         } else if (event.offsetY > ($('#box_tr').innerHeight() - 5) || event.offsetY > ($('#box_tr').innerHeight() + 15)) {
             $('#box_tr').css('border-bottom', `5px solid ${playerColor}`);
             $('#box_br').css('border-top', `5px solid ${playerColor}`);
-            $('#box_tr').addClass('l_border');
+            $('#box_tr').addClass('b_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
@@ -263,6 +264,7 @@ $(() => {
         wonABox();
         console.log(currentPlayer);
     });
+    
 
 
     //bottom right box
@@ -280,20 +282,20 @@ $(() => {
             }
         } else if (event.offsetX > ($('#box_br').innerWidth() - 5)) {
             $('#box_br').css('border-right', `10px solid ${playerColor}`);
-            $('#box_br').addClass('l_border');
+            $('#box_br').addClass('r_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
         } else if (event.offsetY < 5) {
             $('#box_br').css('border-top', `5px solid ${playerColor}`);
             $('#box_tr').css('border-bottom', `5px solid ${playerColor}`);
-            $('#box_br').addClass('l_border');
+            $('#box_br').addClass('t_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
         } else if (event.offsetY > ($('#box_br').innerHeight() - 5) || event.offsetY > ($('#box_br').innerHeight() + 15)) {
             $('#box_br').css('border-bottom', `10px solid ${playerColor}`);
-            $('#box_br').addClass('l_border');
+            $('#box_br').addClass('b_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
@@ -303,6 +305,8 @@ $(() => {
         wonABox();
         console.log(currentPlayer);
     });
+    
+
 
     //bottom left box
     $('#box_bl').click(function (event) {
@@ -319,20 +323,20 @@ $(() => {
         } else if (event.offsetX > ($('#box_bl').innerWidth() - 5)) {
             $('#box_bl').css('border-right', `10px solid ${playerColor}`);
             $('#box_br').css('border-left', `0px solid ${playerColor}`);
-            $('#box_bl').addClass('l_border');
+            $('#box_bl').addClass('r_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
         } else if (event.offsetY < 5) {
             $('#box_bl').css('border-top', `5px solid ${playerColor}`);
             $('#box_tl').css('border-bottom', `5px solid ${playerColor}`);
-            $('#box_bl').addClass('l_border');
+            $('#box_bl').addClass('t_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
         } else if (event.offsetY > ($('#box_bl').innerHeight() - 5) || event.offsetY > ($('#box_bl').innerHeight() + 15)) {
             $('#box_bl').css('border-bottom', `10px solid ${playerColor}`);
-            $('#box_bl').addClass('l_border');
+            $('#box_bl').addClass('b_border');
             playerSwitch();
             console.log(currentPlayer);
             console.log(playerColor);
@@ -342,6 +346,7 @@ $(() => {
         wonABox();
         console.log(currentPlayer);
     });
+    
 
 $('.reset').click(function (e) { 
     e.preventDefault();
