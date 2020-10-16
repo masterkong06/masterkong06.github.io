@@ -161,8 +161,8 @@ const wonABox = () => {
 
 
 $(() => {
-    getPlayerOneInitials();
-    getPlayerTwoInitials();
+    // getPlayerOneInitials();
+    // getPlayerTwoInitials();
 
 
     $('h1').html(`Cornered: A Lines and Dots Game`);
