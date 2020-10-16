@@ -7,25 +7,31 @@ let playerColor = 'red';
 let turns = 0;
 let currentPlayer = 1;
 
-const getPlayerInitials = () => {
+const getPlayerOneInitials = () => {
     // playerOneInitial = prompt(`Enter Player One Name`);
     while (playerOneInitial == '') {
         alert(`Please enter player one's name`);
         playerOneInitial = prompt(`Player One Name`);
     }
     if (playerOneInitial != '' && playerOneInitial.length > 1) {
-        console.log(playerOneInitial.substring(0, 1));
+       let initial = playerOneInitial.substring(0, 1);
         // console.log(playerOneInitial);
+        return initial;
     }
+};
+
+const getPlayerTwoInitials = () => {
     // playerTwoInitial = prompt(`Enter Player Two Name`);
     while (playerTwoInitial == '') {
         alert(`Please enter a player two's name`);
         playerTwoInitial = prompt(`Player Two Name`);
     }
     if (playerTwoInitial != '' && playerTwoInitial.length > 1) {
-        console.log(playerTwoInitial.substring(0, 1));
+        let initial = playerTwoInitial.substring(0, 1);
         // console.log(playerTwoInitial);
+        return initial;
     }
+    
 };
 
 // Establish a player's color
@@ -152,11 +158,22 @@ const wonABox = () => {
 
 
 
+
+
 $(() => {
-    getPlayerInitials();
+    getPlayerOneInitials();
+    getPlayerTwoInitials();
+
+
+    $('h1').html(`Cornered: A Lines and Dots Game`);
+    console.log(playerOneInitial,playerTwoInitial);
     // getPlayerColor();
     // turnTracking();
     // console.log(playerOneColor, playerTwoColor);
+
+    
+
+    // add elements to the DOM
 
     
     
