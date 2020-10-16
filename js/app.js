@@ -188,7 +188,7 @@ $(() => {
 
     //top left box
     $('#box_tl').click(function (event) {
-
+        event.preventDefault();
         if (event.offsetX < 5) {
             $('#box_tl').css('border-left', `10px solid ${playerColor}`);
             $('#box_tl').addClass('l_border');
@@ -227,7 +227,7 @@ $(() => {
 
     //top right box
     $('#box_tr').click(function (event) {
-
+        event.preventDefault();
         if (event.offsetX < 5) { //if I click on the left side of #box_tr
             $('#box_tr').css('border-left', `10px solid ${playerColor}`); //set left border property
             $('#box_tl').css('border-right', `0px solid ${playerColor}`); // and right border property of #box_tl
@@ -267,7 +267,7 @@ $(() => {
 
     //bottom right box
     $('#box_br').click(function (event) {
-
+        event.preventDefault();
         if (event.offsetX < 5) { //if I click on the left side of #box_br
             $('#box_br').css('border-left', `10px solid ${playerColor}`); //set left border property
             $('#box_bl').css('border-right', `0px solid ${playerColor}`); // and right border property of #box_bl
@@ -306,7 +306,7 @@ $(() => {
 
     //bottom left box
     $('#box_bl').click(function (event) {
-
+        event.preventDefault();
         if (event.offsetX < 5) { //if I click on the left side of #box_br
             $('#box_bl').css('border-left', `10px solid ${playerColor}`); //set left border property
             $('#box_bl').addClass('l_border');
