@@ -110,25 +110,25 @@ const wonABox = () => {
     boxClass.each(boxClass => {
 
         //player 1 wins a box
-        if ($('#box_tl').hasClass('box l_border t_border r_border b_border') && currentPlayer%2 ===0){
+        if ($('#box_tl').is('.box, .l_border, .t_border, .r_border, .b_border') && currentPlayer%2 ===0){
             $('#box_tl').html(`<p>${playerOneInitial}</p>`);
-        } else if($('#box_tr').hasClass('box l_border t_border r_border b_border') && currentPlayer%2 ===0){
+        } else if($('#box_tr').is('.box, .l_border, .t_border, .r_border, .b_border') && currentPlayer%2 ===0){
             $('#box_tr').html(`<p>${playerOneInitial}</p>`);
-        } else if($('#box_br').hasClass('box l_border t_border r_border b_border') && currentPlayer%2 ===0){
+        } else if($('#box_br').is('.box, .l_border, .t_border, .r_border, .b_border') && currentPlayer%2 ===0){
         $('#box_tr').html(`<p>${playerOneInitial}</p>`);
-        }else if($('#box_bl').hasClass('box l_border t_border r_border b_border') && currentPlayer%2 ===0){
+        }else if($('#box_bl').is('.box, .l_border, .t_border, .r_border, .b_border') && currentPlayer%2 ===0){
             $('#box_bl').html(`<p>${playerOneInitial}</p>`);
         currentPlayer--;
         }
 
         // player 2 wins a box
-        else if ($('#box_tl').hasClass('box l_border t_border r_border b_border') && currentPlayer%2 !==0){
+        else if ($('#box_tl').is('box l_border t_border r_border b_border') && currentPlayer%2 !==0){
             $('#box_tl').html(`<p>${playerTwoInitial}</p>`);
-        } else if($('#box_tr').hasClass('box l_border t_border r_border b_border') && currentPlayer%2 !==0){
+        } else if($('#box_tr').is('box l_border t_border r_border b_border') && currentPlayer%2 !==0){
             $('#box_tr').html(`<p>${playerTwoInitial}</p>`);
-        } else if($('#box_br').hasClass('box l_border t_border r_border b_border') && currentPlayer%2 !==0){
+        } else if($('#box_br').is('box l_border t_border r_border b_border') && currentPlayer%2 !==0){
         $('#box_tr').html(`<p>${playerTwoInitial}</p>`);
-        }else if($('#box_bl').hasClass('box l_border t_border r_border b_border') && currentPlayer%2 !==0){
+        }else if($('#box_bl').is('box l_border t_border r_border b_border') && currentPlayer%2 !==0){
             $('#box_bl').html(`<p>${playerTwoInitial}</p>`);
         currentPlayer--;
         }
